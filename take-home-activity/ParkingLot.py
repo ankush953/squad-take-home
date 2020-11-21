@@ -1,4 +1,13 @@
+"""
+Problem: https://docs.google.com/document/d/1kgZTEL2hLOQtSQwZU6zuSrCunfrR31H8smy4kdl9m_0/edit
+
+Solution: https://docs.google.com/document/d/1UptC0HQafzeoYce7GPIT040rpkz8Zm9EvzMnOfRmZjA/edit?usp=sharing
+
+Github: https://github.com/ankush953/squad-take-home
+"""
+
 import heapq
+
 
 class Parkinglot:
     """
@@ -22,6 +31,7 @@ class Parkinglot:
     return:
         string
     """
+
     def setCapacity(self, parkingLotCapacity):
         self.parkingLotCapacity = parkingLotCapacity
         for i in range(1, self.parkingLotCapacity + 1):
@@ -36,6 +46,7 @@ class Parkinglot:
     return:
         string
     """
+
     def parkVehicle(self, driverAge, vehicleNumber):
         if self.parkingLotCapacity < 0:
             return "Parking lot space is not allocated yet."
@@ -56,6 +67,7 @@ class Parkinglot:
     return:
         string
     """
+
     def getSlotsWithDriverAge(self, driverAge):
         slots = []
         for slot, vehicleNumber in self.driverAges[driverAge]:
@@ -68,9 +80,9 @@ class Parkinglot:
     return:
         string
     """
+
     def getSlotForVehicleNumber(self, vehicleNumber):
         return self.slotVehicleMap.get(vehicleNumber, "No vehicle is parked with these details.")
-
 
     """
     args:
@@ -78,6 +90,7 @@ class Parkinglot:
     return:
         string
     """
+
     def vacateSlot(self, slot):
         if slot < 1 or slot > self.parkingLotCapacity:
             return "There is no such slot. Are you sure?"
@@ -106,6 +119,7 @@ class Parkinglot:
     return:
         string
     """
+
     def getCarsWithDriverAge(self, driverAge):
         cars = []
         for slot, vehicleNumber in self.driverAges[driverAge]:
